@@ -1,4 +1,4 @@
-package com.example.kulinarya.models
+package com.example.cooking_book.models
 
 data class StepRequest(
     val stepDescription: String,

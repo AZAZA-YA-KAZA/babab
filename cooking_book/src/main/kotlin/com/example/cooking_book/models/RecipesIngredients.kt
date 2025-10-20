@@ -1,4 +1,4 @@
-package com.example.kulinarya.models
+package com.example.cooking_book.models
 
 import jakarta.persistence.*
 

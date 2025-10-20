@@ -1,6 +1,6 @@
-package com.example.kulinarya.repository
+package com.example.cooking_book.repository
 
-import com.example.kulinarya.models.RecipesIngredients
+import com.example.cooking_book.models.RecipesIngredients
 import jakarta.transaction.Transactional
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
