@@ -19,4 +19,6 @@ interface RecipeRepository : JpaRepository<Recipe, Int> {
         @Param("description") description: String,
         @Param("photoUrl") photoUrl: String
     )
-}
+
+    @Query("SELECT r FROM Recipe r")
+    fun findAllRec(): List<Recipe>}

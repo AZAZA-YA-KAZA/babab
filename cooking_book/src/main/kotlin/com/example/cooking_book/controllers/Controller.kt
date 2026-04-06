@@ -107,4 +107,10 @@ class Controller(private val projectService: ProjectService) {
     fun getIngredient(@PathVariable idRecipe: Long): ResponseEntity<List<Array<Any>>> {
         return ResponseEntity.ok(projectService.getIngredient(idRecipe))
     }
+
+
+    @GetMapping("/api/kulinare/recipes")
+    fun getAllRecipes(): ResponseEntity<List<Recipe>> {
+        return ResponseEntity.ok(projectService.getAllRecipes())
+    }
 }

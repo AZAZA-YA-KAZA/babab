@@ -114,4 +114,10 @@ class ProjectService(
         return recipeIngredientsRepository.getIngredientRecipe(idRecipe, idIngredient)
             ?: throw Exception("RecipeIngredient not found")
     }
+
+
+    fun getAllRecipes(): List<Recipe> {
+        return recipeRepository.findAllRec()
+    }
+
 }
