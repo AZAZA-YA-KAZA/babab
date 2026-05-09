@@ -1,15 +1,18 @@
 package com.example.cooking_book.controllers
 
-import com.example.cooking_book.models.*
+import com.example.cooking_book.models.Ingredient
+import com.example.cooking_book.models.IngredientRequest
+import com.example.cooking_book.models.Recipe
+import com.example.cooking_book.models.RecipeRequest
 import com.example.cooking_book.service.ProjectService
-import com.example.cooking_book.service.InternetRecipeService
+import com.example.cooking_book.models.RecipesIngredients
+import com.example.cooking_book.models.Step
+import com.example.cooking_book.models.StepRequest
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class Controller(private val projectService: ProjectService,
-                 private val internetRecipeService: InternetRecipeService
-) {
+class Controller(private val projectService: ProjectService) {
 
     // Создание рецепта
     @PostMapping("/api/kulinare/recipe")
@@ -109,10 +112,5 @@ class Controller(private val projectService: ProjectService,
     @GetMapping("/api/kulinare/recipes")
     fun getAllRecipes(): ResponseEntity<List<Recipe>> {
         return ResponseEntity.ok(projectService.getAllRecipes())
-    }
-
-    @GetMapping("/api/kulinare/internet/search")
-    fun searchRecipeInInternet(@RequestParam query: String): List<InternetRecipeResponse> {
-        return internetRecipeService.searchRecipe(query)
     }
 }

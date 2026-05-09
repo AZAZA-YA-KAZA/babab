@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 
-interface RecipeRepository : JpaRepository<Recipe, Long> {
+interface RecipeRepository : JpaRepository<Recipe, Int> {
     @Modifying
     @Transactional
     @Query("UPDATE Recipe r SET r.title = :title, r.description = :description, r.photoUrl = :photoUrl " +

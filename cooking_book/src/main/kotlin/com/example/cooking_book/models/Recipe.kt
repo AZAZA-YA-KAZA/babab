@@ -4,7 +4,15 @@ import jakarta.persistence.*
 import lombok.Data
 import lombok.NoArgsConstructor
 
-
+/**
+ * Основная сущность рецепта в кулинарной книге.
+ * Содержит заголовок, краткое описание и ссылку на визуальное представление блюда.
+ *
+ * @property idRecipe Уникальный идентификатор рецепта (первичный ключ).
+ * @property title Название блюда (отображается в списке и при поиске).
+ * @property description Краткое описание рецепта или заметки автора.
+ * @property photoUrl URL-адрес или путь к загруженной фотографии готового блюда.
+ */
 @Table(name = "recipe")
 @Entity
 @Data
@@ -23,6 +31,9 @@ data class Recipe(
 
     @Column(name = "photo_url")
     var photoUrl: String
-    ) {
+) {
+    /**
+     * Конструктор по умолчанию для JPA, инициализирующий поля пустыми строками.
+     */
     constructor() : this(title = "", description = "", photoUrl = "")
 }
