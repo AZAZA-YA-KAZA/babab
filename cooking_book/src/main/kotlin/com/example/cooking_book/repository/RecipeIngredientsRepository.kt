@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 
-interface RecipeIngredientsRepository : JpaRepository<RecipesIngredients, Int> {
+interface RecipeIngredientsRepository : JpaRepository<RecipesIngredients, Long> {
     @Modifying
     @Transactional
     @Query("DELETE FROM RecipesIngredients r WHERE r.idRecipe = :idRecipe AND r.idIngredient = :idIngredient")

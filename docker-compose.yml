@@ -5,8 +5,8 @@ services:
     image: postgres:16.4
     networks:
       - backend_network
-    container_name: db
-    hostname: db
+    container_name: dt
+    hostname: dt
     restart: unless-stopped
     environment:
       POSTGRES_USER: rootuser

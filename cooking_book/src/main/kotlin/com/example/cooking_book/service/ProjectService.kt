@@ -42,7 +42,7 @@ class ProjectService(
             ingredientRepository.save(newIngredient)
             newIngredient
         } else {
-            ingredientRepository.findById(idIngredient.toInt())
+            ingredientRepository.findById(idIngredient)
                 .orElseThrow { Exception("Ingredient not found") }
         }
         val recipesIngredients = RecipesIngredients(
@@ -62,7 +62,7 @@ class ProjectService(
             description = recipeRequest.description,
             photoUrl = recipeRequest.photoUrl
         )
-        return recipeRepository.findById(idRecipe.toInt())
+        return recipeRepository.findById(idRecipe)
             .orElseThrow { Exception("Recipe not found") }
     }
 
@@ -72,12 +72,12 @@ class ProjectService(
             stepDescription = stepRequest.stepDescription,
             stepOrder = stepRequest.stepOrder
         )
-        return stepRepository.findById(idStep.toInt())
+        return stepRepository.findById(idStep)
             .orElseThrow { Exception("Step not found") }
     }
 
     fun deleteRecipe(idRecipe: Long): String {
-        recipeRepository.deleteById(idRecipe.toInt())
+        recipeRepository.deleteById(idRecipe)
         return "Deleted"
     }
 
@@ -92,7 +92,7 @@ class ProjectService(
     }
 
     fun getRecipe(idRecipe: Long): Recipe {
-        return recipeRepository.findById(idRecipe.toInt())
+        return recipeRepository.findById(idRecipe)
             .orElseThrow { Exception("Recipe not found") }
     }
 
